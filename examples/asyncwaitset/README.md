@@ -67,7 +67,7 @@ dispatching thread busy.
 
 Additionally, the example also shows how a condition can be dispatched 
 concurrently. The *StatusCondition* handler, right before the aforementioned 
-sleep operation, calls `AsyncWaitSet::unblock_condition()` to indicate that the 
+sleep operation, calls `AsyncWaitSet::unlock_condition()` to indicate that the 
 condition can be dispatched again if necessary. Then, if more samples arrive, 
 the *AsyncWaitSet* will use any available thread to dispatch the 
 *StatusCondition* again, causing a concurrent dispatch.
